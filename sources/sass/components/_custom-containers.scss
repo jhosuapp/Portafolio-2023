@@ -1,0 +1,6 @@
+@use '../base/variables' as var;
+.ctn{
+    width: 90%;
+    margin: auto;
+    max-width: var.$limit-width;
+}

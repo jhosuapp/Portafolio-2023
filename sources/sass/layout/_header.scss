@@ -1,0 +1,10 @@
+@use '../base/mixin' as mix;
+header{
+    position: fixed;
+    background-color: red;
+    width: 100%;
+    .ctn{
+        background-color: blue;
+        @include mix.flex($jc: space-between);
+    }
+}

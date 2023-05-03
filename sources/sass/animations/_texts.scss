@@ -1,0 +1,23 @@
+.animation-tx{
+    span{
+        animation: text-reveal 1.5s ease 1 var(--index) forwards;
+        opacity: 0;
+    }
+}
+
+@keyframes text-reveal{
+    from{
+        opacity: 1;
+        transform: translateX(200px);
+    }
+    25%{
+        transform: translateX(-15px);
+    }
+    50%{
+        transform: translateX(10px);
+    }
+    to{
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
