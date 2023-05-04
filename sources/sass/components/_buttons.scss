@@ -1,0 +1,44 @@
+@use '../base/mixin' as mix;
+@use '../base/functions' as fun;
+.btn{
+    @include mix.flex;
+    position: relative;
+    background-color: transparent;
+    font-size: 1.7rem;
+    color: fun.color('primary');
+    height: 50px;
+    border-radius: 100px;
+    padding: 0 40px;
+    width: 100%;
+    max-width: 350px;
+    border: 2px solid fun.color('primary');
+    span{
+        position: relative;
+        font-family: roboto;
+        &:first-child,
+        &:last-child{
+            transition: .5s ease;
+            transition-property: top, bottom, opacity;
+        }
+        &:first-child{
+            top: 0;
+        }
+        &:last-child{
+            opacity: 0;
+            position: absolute;
+            bottom: 5px;
+        }
+    }
+    &:hover{
+        span{
+            &:first-child{
+                top: -10px;
+                opacity: 0;
+            }
+            &:last-child{
+                bottom: 13px;
+                opacity: 1;
+            }
+        }
+    }
+}

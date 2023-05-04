@@ -216,5 +216,46 @@
                 }
             }
         }
+        &--small{
+            padding-left: 10px;
+            .logo__number{
+                span{
+                    position: relative;
+                    &:first-child{
+                        width: 9.5px;
+                        height: 40px;
+                    }
+                    &:first-child,
+                    &:nth-child(2){
+                        &::before{
+                            top: -7px;
+                            right: 5px;
+                            border-left: 10px solid fun.color('secondary');
+                            border-top: 10px solid transparent;
+                            border-bottom: 10px solid transparent;
+                        }
+                    }
+                    &:nth-child(2){
+                        width: 30px;
+                        height: 30px;
+                        &::before{
+                            top: -22px;
+                            left: -3px;
+                            border-left: 18.5px solid fun.color('secondary');
+                            border-top: 18.5px solid transparent;
+                            border-bottom: 18.5px solid transparent;
+                        }
+                    }
+                    &:last-child{
+                        width: 40px;
+                        height: 40px;
+                        left: -5px;
+                    }
+                }
+            }
+            .logo__percent{
+                display: none;
+            }
+        }
     }
 }

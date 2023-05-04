@@ -11,6 +11,18 @@ const Nav = (()=>{
         getLoader && getLoader.classList.add('active');
        },1500);
     }
+    //=============================/
+    //CONFIG PARA EL MENU PRINCIPAL
+    //=============================/
+    const Menu = ()=>{
+        const getBtnOpenMenu = document.querySelector('#menu-open');
+        const getCtnMenu = document.querySelector('#menu-ctn');
+        getBtnOpenMenu.addEventListener('click', ()=>{
+            getCtnMenu.classList.toggle('animation-tx');
+            getCtnMenu.classList.toggle('active');
+            getBtnOpenMenu.classList.toggle('active');
+        });
+    }
     //=============================================================/
     //RETORNAMOS LAS FUNCIONES HIJAS QUE VAMOS A USAR
     //=============================================================/
@@ -18,6 +30,7 @@ const Nav = (()=>{
         NavChilds : function (){
             try { ConfigNav(); } catch (error) { }            
             try { Loader(); } catch (error) { }
+            try { Menu(); } catch (error) { }
         }
     }
 })();

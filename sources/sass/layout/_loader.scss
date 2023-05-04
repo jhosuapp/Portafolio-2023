@@ -21,14 +21,14 @@
     &__ctn{
         display: flex;
     }
-    .logo{
-        span,
-        span::before{
-            transition: 1s ease all;
-        }
-    }
     &.active{
         animation: hidden-left 2s ease 1s 1 forwards;
+        .logo{
+            span,
+            span::before{
+                transition: 1s ease all;
+            }
+        }
         &::before{
             width: 5000px;
             height: 5000px;
