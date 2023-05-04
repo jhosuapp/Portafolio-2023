@@ -1,2 +1,35 @@
 @use '../base/functions' as fun;
 @use '../base/mixin' as mix;
+
+.home-banner{
+    min-height: 100vh;
+    position: relative;
+    &__scroll-down{
+        position: absolute;
+        width: 35vh;
+        height: 35vh;
+        border: 2px solid fun.color('primary');
+        border-radius: 100%;
+        z-index: 99;
+        left: -12.5vh;
+        bottom: -13.5vh;
+        @include mix.flex;
+        img{
+            width: 4vh;
+            margin-left: 2vw;
+        }
+    }
+    &__iframe{
+        height:0px;
+        width:100%;
+        padding-top:40.25%; /* Relación: 16/9 = 56.25% */
+        position:relative;
+        iframe{
+            position:absolute;
+            height:100%;
+            width:100%;
+            top:0px;
+            left:0px;
+        }
+    }
+}

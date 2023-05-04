@@ -1,11 +1,32 @@
 @use '../base/mixin' as mix;
 @use '../base/functions' as fun;
+
+body.open-menu{
+    header{
+        &.scrolling{
+            background-color: transparent;
+        }
+        &.scrollingDown{
+            top: 0;
+        }
+    }
+}
+
 //HEADER NAV SIEMPRE VISIBLE
 header{
     position: fixed;
     width: 100%;
     z-index: 1;
     padding: 10px 0;
+    transition: .5s ease;
+    top: 0;
+    transition-property: background-color, top;
+    &.scrolling{
+        background-color: fun.color('white');
+    }
+    &.scrollingDown{
+        top: -75px;
+    }
     .ctn{
         @include mix.flex($jc: space-between);
     }
@@ -68,6 +89,7 @@ header{
     padding: 100px 0;
     opacity: 0;
     transition: 1s ease opacity;
+    pointer-events: none;
     &::before{
         content: "";
         position: fixed;
@@ -85,6 +107,7 @@ header{
     }
     &.active{
         opacity: 1;
+        pointer-events: inherit;
         &::before{
             top: calc(50% - 100%);
         }

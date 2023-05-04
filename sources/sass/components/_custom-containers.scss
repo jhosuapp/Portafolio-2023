@@ -3,4 +3,10 @@
     width: 90%;
     margin: auto;
     max-width: var.$limit-width;
+    &--principal{
+        padding-top: 75px;
+    }
+}
+#main{
+    width: 100%;
 }
