@@ -31,6 +31,14 @@
             overflow-wrap: break-word;
         }
     }
+    video{
+        width: 130vh;
+        position: absolute;
+        height: 70vh;
+    }
+}
+.home-banner,
+.home-invite{
     .block-animation{
         display: flex;
         &:nth-child(2){
@@ -50,10 +58,15 @@
             }
         }
     }
-    video{
-        width: 130vh;
-        position: absolute;
-        height: 70vh;
+}
+//INIVITACIÓN
+.home-invite{
+    .block-animation{
+        justify-content: center;
+        align-items: center;
+        .btn--secondary{
+            margin-left: 20px;
+        }
     }
 }
 
@@ -83,6 +96,14 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-small')){
+    .home-invite{
+        .btn--secondary{
+            display: none;
         }
     }
 }

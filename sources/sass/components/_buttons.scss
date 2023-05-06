@@ -42,3 +42,56 @@
         }
     }
 }
+
+.btn--secondary{
+    @include mix.flex;
+    height: 7.5vh;
+    position: relative;
+    background-color: fun.color('secondary');
+    width: fit-content;
+    padding: 0 6vh;
+    border-radius: 100px;
+    overflow: hidden;
+    &::before,
+    &::after{
+        position: absolute;
+        content: "";
+        width: 140%;
+        height: 140%;
+        left: calc(50% - 70%);
+        background-color: fun.color('tertiary');
+        transition: .5s all ease;
+        z-index: 1;
+        clip-path: circle(0);
+    }
+    &::before{
+        background-color: fun.color('primary');
+        z-index: 2;
+    }
+    &:hover{
+        &::after,
+        &::before{
+            height: 120%;
+            clip-path: circle(50% at 50% 50%);
+        }
+        &::before{
+            transition-delay: 0.1s;
+        }
+    }
+    i{
+        color: fun.color('white');
+        font-style: normal;
+        font-size: 2.2vh;
+        z-index: 3;
+    }
+}
+
+@media(max-width: fun.breakpoints('ipad-big')){
+    .btn--secondary{
+        height: 50px;
+        padding: 0 20px;
+        i{
+            font-size: 1.6rem;
+        }
+    }
+}
