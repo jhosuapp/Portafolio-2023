@@ -1,6 +1,12 @@
-.animation-tx{
+.animation-tx,
+.personality-animation.aos-animate .animation-tx-reveal{
     span{
         animation: text-reveal 1.5s ease 1 var(--index) forwards;
+        opacity: 0;
+    }
+}
+.personality-animation .animation-tx-reveal{
+    span{
         opacity: 0;
     }
 }

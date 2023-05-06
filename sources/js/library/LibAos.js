@@ -12,7 +12,7 @@ const Aos = function(){
                 easing: 'ease',
                 once: true,
             });
-        }, 1000);
+        }, 3000);
     }
     //=============================================================/
     //RETORNAMOS LAS FUNCIONES HIJAS QUE VAMOS A USAR
