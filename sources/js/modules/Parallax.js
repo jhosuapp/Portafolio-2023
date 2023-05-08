@@ -12,8 +12,9 @@ const Parallax = (()=>{
         const getBody = document.querySelector('body');
 
         getBody.addEventListener('mousemove', (e)=>{
-            getCursorParallax.style.left = `${e.clientX}px`;
-            getCursorParallax.style.top = `${e.clientY}px`;
+            // getCursorParallax.style.left = `${e.clientX}px`;
+            // getCursorParallax.style.top = `${e.clientY}px`;
+            getCursorParallax.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0px)`
         });
     }
 
