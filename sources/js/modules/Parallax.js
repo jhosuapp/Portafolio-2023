@@ -10,11 +10,22 @@ const Parallax = (()=>{
     const ParallaxCursor = ()=>{
         const getCursorParallax = document.querySelector('#parallax-cursor');
         const getBody = document.querySelector('body');
+        const getCursorParallaxSwiper = document.querySelector('#parallax-cursor-swiper');
+        const getCtnParallaxSwiper = document.querySelector('#parallax-ctn-swiper');
 
         getBody.addEventListener('mousemove', (e)=>{
-            // getCursorParallax.style.left = `${e.clientX}px`;
-            // getCursorParallax.style.top = `${e.clientY}px`;
             getCursorParallax.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0px)`
+        });
+        //PARALLAX BTN SWIPER
+        getCtnParallaxSwiper.addEventListener('mousemove', (e)=>{
+            getCursorParallaxSwiper.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0px)`
+            getCursorParallaxSwiper.classList.add('active');
+        });
+        getCtnParallaxSwiper.nextElementSibling.addEventListener('mousemove', ()=>{
+            getCursorParallaxSwiper.classList.remove('active');
+        });
+        getCtnParallaxSwiper.previousElementSibling.addEventListener('mousemove', ()=>{
+            getCursorParallaxSwiper.classList.remove('active');
         });
     }
 
@@ -63,6 +74,18 @@ const Parallax = (()=>{
         }
     }
     //=============================================================/
+    //CREAMOS EFECTO PARALLAX PARA CUANDO SE HAGA HOVER EN IMÁGENES
+    //=============================================================/
+    // const ParallaxSwiperHome = ()=>{
+    //     const getSwiper = document.querySelector('.swiper-home .swiper-wrapper');
+
+    //     window.addEventListener('scroll', ()=>{
+    //         getSwiper.style.transform = `translate3d(${window.scrollY / 2}px, 0px, 0px)`;
+    //     });
+
+    // }
+
+    //=============================================================/
     //RETORNAMOS LAS FUNCIONES HIJAS QUE VAMOS A USAR
     //=============================================================/
 
@@ -70,6 +93,7 @@ const Parallax = (()=>{
         ParallaxChilds : function(){
             try { ParallaxHover(); } catch (error) {  }
             try { ParallaxCursor(); } catch (error) {  }
+            try { ParallaxSwiperHome(); } catch (error) {  }
         }
     }
 

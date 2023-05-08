@@ -5,7 +5,18 @@
         opacity: 0;
     }
 }
-.personality-animation .animation-tx-reveal{
+.personality-animation.aos-animate .animation-tx-reveal-secondary{
+    display: flex;
+    overflow: hidden;
+    span{
+        opacity: 0;
+        animation: text-reveal-secondary 1s ease 1 var(--index) forwards;
+        margin-right: 5px;
+    }
+}
+
+.personality-animation .animation-tx-reveal,
+.personality-animation .animation-tx-reveal-secondary{
     span{
         opacity: 0;
     }
@@ -25,5 +36,16 @@
     to{
         transform: translateX(0);
         opacity: 1;
+    }
+}
+
+@keyframes text-reveal-secondary {
+    from{
+        opacity: 1;
+        transform: translateY(200px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
     }
 }

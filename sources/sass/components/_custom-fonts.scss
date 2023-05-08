@@ -12,11 +12,32 @@
     h1, h1 span{
         font-size: 12vh;
     }
+    h4, h4 span{
+        font-size: 5vh;
+    }
+    h5, h5 span{
+        font-size: 4vh;
+    }
+    h5 b{
+        font-weight: 700;
+    }
+    h6, h6 span{
+        font-size: 3.25vh;
+    }
+    p{
+        font-size: 2vh;
+    }
 }
 @media(max-width: fun.breakpoints('ipad-big')){
     .ctm-fonts{
         h1, h1 span{
             font-size: 6rem;
+        }
+        h5, h5 span{
+            font-size: 2.5rem;
+        }
+        p{
+            font-size: 1.8rem;
         }
     }
 }
@@ -24,6 +45,12 @@
     .ctm-fonts{
         h1, h1 span{
             font-size: 4rem;
+        }
+        h5, h5 span{
+            font-size: 2rem;
+        }
+        p{
+            font-size: 1.6rem;
         }
     }
 }
