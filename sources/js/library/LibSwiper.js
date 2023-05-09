@@ -9,7 +9,7 @@ const LibSwiper = (()=>{
             modules: [Autoplay, Navigation],
             slidesPerView: 1.2,
             spaceBetween: 20,
-            loop: true,
+            // loop: true,
             speed: 1500,
             // autoplay: {
             //     delay: 0,

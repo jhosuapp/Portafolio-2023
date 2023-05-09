@@ -4,7 +4,6 @@
 .home-banner{
     min-height: 100vh;
     position: relative;
-    margin-bottom: 75px;
     @include mix.flex;
     &__panel{
         transform: perspective(400px) rotateX(0deg) rotateY(0deg);
@@ -74,7 +73,6 @@
 @media(max-width: fun.breakpoints('ipad-big')){
     .home-banner{
         min-height: 100%;
-        padding-bottom: 40px;
         &.ctn{
             margin-top: 30px;
         }

@@ -20,6 +20,7 @@
     }
     .swiper-wrapper{
         transition-timing-function : linear;
+        transition-duration: .5s;
     }
     .swiper-slide{
         border-radius: 20px;
@@ -29,6 +30,13 @@
         &.swiper-slide-next{
             img{
                 transform: scale(1.1);
+            }
+        }
+        &.swiper-slide-next{
+            &:hover{
+                img{
+                    transform: scale(1.2);
+                }
             }
         }
         &:nth-child(odd){
@@ -90,5 +98,15 @@
     .swiper-home{
         width: 100%;
         left: 5%;
+        picture{
+            max-height: 400px;
+        }
+        .ctm-fonts{
+            h5, p, b{
+                opacity: 1;
+                transform: translateY(0);
+                transition-delay: 0 !important;
+            }
+        }
     }
 }

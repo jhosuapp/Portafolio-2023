@@ -12,6 +12,7 @@ const Parallax = (()=>{
         const getBody = document.querySelector('body');
         const getCursorParallaxSwiper = document.querySelector('#parallax-cursor-swiper');
         const getCtnParallaxSwiper = document.querySelector('#parallax-ctn-swiper');
+        const getParentCtnParallaxSwiper =  getCtnParallaxSwiper.closest('.ctn--top');
 
         getBody.addEventListener('mousemove', (e)=>{
             getCursorParallax.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0px)`
@@ -21,12 +22,17 @@ const Parallax = (()=>{
             getCursorParallaxSwiper.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0px)`
             getCursorParallaxSwiper.classList.add('active');
         });
-        getCtnParallaxSwiper.nextElementSibling.addEventListener('mousemove', ()=>{
-            getCursorParallaxSwiper.classList.remove('active');
-        });
-        getCtnParallaxSwiper.previousElementSibling.addEventListener('mousemove', ()=>{
-            getCursorParallaxSwiper.classList.remove('active');
-        });
+        //FUNCIÓN PARA REMOVER PARALLAX
+        const reUseRemoveParallax = (clsEvent)=>{
+            clsEvent.nextElementSibling.addEventListener('mousemove', ()=>{
+                getCursorParallaxSwiper.classList.remove('active');
+            });
+            clsEvent.previousElementSibling.addEventListener('mousemove', ()=>{
+                getCursorParallaxSwiper.classList.remove('active');
+            });
+        }
+        reUseRemoveParallax(getCtnParallaxSwiper);
+        reUseRemoveParallax(getParentCtnParallaxSwiper);
     }
 
     //=============================================================/
@@ -76,14 +82,14 @@ const Parallax = (()=>{
     //=============================================================/
     //CREAMOS EFECTO PARALLAX PARA CUANDO SE HAGA HOVER EN IMÁGENES
     //=============================================================/
-    // const ParallaxSwiperHome = ()=>{
-    //     const getSwiper = document.querySelector('.swiper-home .swiper-wrapper');
+    const ParallaxSwiperHome = ()=>{
+        const getSwiper = document.querySelector('.swiper-home .swiper-wrapper');
 
-    //     window.addEventListener('scroll', ()=>{
-    //         getSwiper.style.transform = `translate3d(${window.scrollY / 2}px, 0px, 0px)`;
-    //     });
+        window.addEventListener('scroll', ()=>{
+            getSwiper.style.transform = `translate3d(-${window.scrollY}px, 0px, 0px)`;
+        });
 
-    // }
+    }
 
     //=============================================================/
     //RETORNAMOS LAS FUNCIONES HIJAS QUE VAMOS A USAR

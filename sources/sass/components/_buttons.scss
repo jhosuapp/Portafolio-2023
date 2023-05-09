@@ -95,3 +95,12 @@
         }
     }
 }
+@media(max-width: fun.breakpoints('ipad-small')){
+    .btn--secondary{
+        height: 45px;
+        padding: 0 15px;
+        i{
+            font-size: 1.4rem;
+        }
+    }
+}

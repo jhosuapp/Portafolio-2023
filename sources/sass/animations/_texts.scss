@@ -7,6 +7,7 @@
 }
 .personality-animation.aos-animate .animation-tx-reveal-secondary{
     display: flex;
+    flex-wrap: wrap;
     overflow: hidden;
     span{
         opacity: 0;
