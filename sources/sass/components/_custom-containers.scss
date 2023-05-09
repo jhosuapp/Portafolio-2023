@@ -18,6 +18,11 @@
     width: 100%;
 }
 
+@media(max-width: fun.breakpoints('ipad-big')){
+    #main{
+        overflow-x: hidden;
+    }
+}
 @media(max-width: fun.breakpoints('ipad-small')){
     .ctn{
         &--top{
@@ -27,4 +32,6 @@
             padding-bottom: 6rem;
         }
     }
+
+
 }
