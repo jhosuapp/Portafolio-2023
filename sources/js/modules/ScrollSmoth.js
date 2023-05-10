@@ -1,12 +1,13 @@
 const ScrollSmoth = (()=>{
 
-    //=======================================//
-    //CONFIGURACIÓN GENERAL DEL SCROLL ANIMADO
-    //======================================//
+    //==============================================//
+    //CONFIGURACIÓN GENERAL DEL SCROLL ANIMADO + ANCLA
+    //=============================================//
     const ConfigScrollSmoth = ()=>{
         const ReuseConfigScrollSmoth = ()=>{
             const body = document.body;
             const main = document.getElementById('main');
+            const getAnchor = document.getElementById('parallax-anchor');
             let sx = 0, // For scroll positions
                 sy = 0;
             let dx = sx, // For container positions
@@ -42,6 +43,7 @@ const ScrollSmoth = (()=>{
                 dy = Math.floor(dy * 100) / 100;
 
                 main.style.transform = `translate3d(-${dx}px, -${dy}px, 0px)`;
+                getAnchor.style.transform = `translate3d(-${dx}px, -${dy}px, 0px)`;
                 window.requestAnimationFrame(render);
             }
 

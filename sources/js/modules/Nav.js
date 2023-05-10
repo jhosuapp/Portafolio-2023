@@ -26,6 +26,9 @@ const Nav = (()=>{
             getBody.classList.toggle('open-menu');
         });
     }
+    //===================================================/
+    //ANIMACIÓN QUE SE AÑADE AL MENÚ CUANDO SE HACE SCROLL
+    //===================================================/
     const ScrollNav = ()=>{
         const getHeader = document.querySelector('header');
         let lastScrollPosition = 0;
@@ -48,6 +51,17 @@ const Nav = (()=>{
         });
 
     }
+    //===================================================/
+    //ANCLA INICIAL DEL BANNER
+    //===================================================/
+    const AnchorNav = ()=>{
+        const getBtnAnchor = document.querySelector('#parallax-anchor');
+        const getFirtsCtn = document.querySelector('.home-banner');
+
+        getBtnAnchor.addEventListener('click', ()=>{
+            window.scroll(0, getFirtsCtn.scrollHeight);
+        });
+    }
     //=============================================================/
     //RETORNAMOS LAS FUNCIONES HIJAS QUE VAMOS A USAR
     //=============================================================/
@@ -57,6 +71,7 @@ const Nav = (()=>{
             try { Loader(); } catch (error) { }
             try { Menu(); } catch (error) { }
             try { ScrollNav(); } catch (error) { }
+            try { AnchorNav(); } catch (error) { }
         }
     }
 })();
