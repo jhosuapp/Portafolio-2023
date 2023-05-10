@@ -36,12 +36,26 @@
         height: 70vh;
     }
 }
+@keyframes reveal-anchor{
+    from{
+        opacity: 1;
+        transform: scale(0.8);
+    }
+    50%{
+        transform: scale(1.2);
+    }
+    to{
+        transform: scale(1);
+        opacity: 1;
+    }
+}
 .home-anchor{
     position: relative;
-    left: -100%;
-    transition: 1s ease left;
     &.aos-init{
-        left: 0;
+        transition-duration: 0s !important;
+        .home-anchor__ctn{
+            animation: reveal-anchor 1s .5s ease 1 forwards;
+        }
     }
     &__ctn{
         margin-left: -3.5rem;
@@ -51,6 +65,8 @@
         left: 0;
         height: 35vh;
         width: 35vh;
+        transform: scale(0.8);
+        opacity: 0;
         cursor: pointer;
         &:hover{
             .home-anchor__bg{
@@ -161,8 +177,78 @@
         display: none;
     }
 }
+//CLIENTES
+.home-clients{
+    background-color: fun.color('primary');
+    margin: 5vh 0 12.5vh;
+    padding: 10vh 0;
+    .ctm-fonts{
+        margin-bottom: 60px;
+        h4{
+            margin-bottom: 10px;
+        }
+        h4,
+        h6{
+            display: flex;
+            justify-content: center;
+        }
+        h4 span,
+        h6 span{
+            color: fun.color('white') !important;
+        }
+    }
+    &__flex{
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+    }
+    picture{
+        width: 200px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+    }
+}
 
+@media(max-width: fun.breakpoints('desktop')){
+    .home-clients{
+        picture{
+            width: 150px;
+            height: 70px;
+        }
+        &__flex{
+            flex-wrap: nowrap;
+        }
+    }
+}
+@media(max-width: fun.breakpoints('ipad-big')){
+    .home-clients{
+        padding: 60px 0;
+        margin: 20px 0 60px;
+    }
+}
 @media(max-width: fun.breakpoints('ipad-small')){
+    .home-clients{
+        &__flex{
+            div{
+                flex: 1;
+                display: none;
+                &:nth-child(1),
+                &:nth-child(2),
+                &:nth-child(3){
+                    display: flex;
+                }
+            }
+            picture{
+                width: 100%;
+                img{
+                    width: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+    }
     .home-invite,
     .home-banner{
         .btn--secondary{

@@ -7,6 +7,8 @@ import { getChildsSwiper } from "./library/LibSwiper";
 import { getChildsNav } from './modules/Nav';
 import { getChildScrollSmoth } from "./modules/ScrollSmoth";
 import { getChildsParallax } from "./modules/Parallax";
+//LAYOUT
+import { getChildsClients } from "./layout/Clients";
 
 //EJECUTAMOS LAS FUNCIONES CUANDO SE HAYA CARGADO EL NAVEGADOR
 window.addEventListener('load', ()=>{
@@ -15,4 +17,5 @@ window.addEventListener('load', ()=>{
     getChildsNav();
     getChildScrollSmoth();
     getChildsParallax();
+    getChildsClients();
 });

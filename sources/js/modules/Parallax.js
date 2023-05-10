@@ -12,7 +12,7 @@ const Parallax = (()=>{
         const getBody = document.querySelector('body');
         const getCursorParallaxSwiper = document.querySelector('#parallax-cursor-swiper');
         const getCtnParallaxSwiper = document.querySelector('#parallax-ctn-swiper');
-        const getParentCtnParallaxSwiper =  getCtnParallaxSwiper.closest('.ctn--top');
+        const getAllCtns = document.querySelectorAll('section');
 
         getBody.addEventListener('mousemove', (e)=>{
             getCursorParallax.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0px)`
@@ -23,16 +23,14 @@ const Parallax = (()=>{
             getCursorParallaxSwiper.classList.add('active');
         });
         //FUNCIÓN PARA REMOVER PARALLAX
-        const reUseRemoveParallax = (clsEvent)=>{
-            clsEvent.nextElementSibling.addEventListener('mousemove', ()=>{
-                getCursorParallaxSwiper.classList.remove('active');
-            });
-            clsEvent.previousElementSibling.addEventListener('mousemove', ()=>{
-                getCursorParallaxSwiper.classList.remove('active');
-            });
-        }
-        reUseRemoveParallax(getCtnParallaxSwiper);
-        reUseRemoveParallax(getParentCtnParallaxSwiper);
+        getAllCtns.forEach((data)=>{
+            if(!data.classList.contains('ctn--carousel')){
+                data.addEventListener('mousemove', ()=>{
+                    getCursorParallaxSwiper.classList.remove('active');
+                    getCursorParallaxSwiper.classList.remove('active');
+                });
+            }
+        });
     }
 
     //=============================================================/
