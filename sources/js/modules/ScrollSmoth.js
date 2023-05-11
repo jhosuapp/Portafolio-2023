@@ -8,6 +8,7 @@ const ScrollSmoth = (()=>{
             const body = document.body;
             const main = document.getElementById('main');
             const getAnchor = document.getElementById('parallax-anchor');
+            const getCookies = document.getElementById('cookies');
             let sx = 0, // For scroll positions
                 sy = 0;
             let dx = sx, // For container positions
@@ -44,6 +45,7 @@ const ScrollSmoth = (()=>{
 
                 main.style.transform = `translate3d(-${dx}px, -${dy}px, 0px)`;
                 getAnchor.style.transform = `translate3d(-${dx}px, -${dy}px, 0px)`;
+                getCookies.style.transform = `translate3d(-${dx}px, -${dy / 3}px, 0px)`;
                 window.requestAnimationFrame(render);
             }
 

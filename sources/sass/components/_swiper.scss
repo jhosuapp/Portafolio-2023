@@ -17,6 +17,12 @@
         h6{
             margin-top: 20px;
         }
+        .secondary{
+            color: fun.color('secondary');
+        }
+        .tertiary{
+            color: fun.color('tertiary');
+        }
     }
     .swiper-wrapper{
         transition-timing-function : linear;
