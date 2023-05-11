@@ -62,6 +62,18 @@ const Nav = (()=>{
             window.scroll(0, getFirtsCtn.scrollHeight);
         });
     }
+    //===================================================/
+    //BARRA DE PROGRESO
+    //===================================================/
+    const ProgressbarNav = ()=>{
+        const progressBar = document.querySelector('.progress-bar');
+        let getBodyHeight = document.querySelector('body').scrollHeight;
+        let calcHeight = getBodyHeight - (window.screen.height / 1.3);
+        window.addEventListener('scroll', () => {
+            const percent = (100 * window.scrollY) / calcHeight;
+            progressBar.style.width = `${percent}%`;
+        });
+    }
     //=============================================================/
     //RETORNAMOS LAS FUNCIONES HIJAS QUE VAMOS A USAR
     //=============================================================/
@@ -72,6 +84,7 @@ const Nav = (()=>{
             try { Menu(); } catch (error) { }
             try { ScrollNav(); } catch (error) { }
             try { AnchorNav(); } catch (error) { }
+            try { ProgressbarNav(); } catch (error) { console.log(error)}
         }
     }
 })();
